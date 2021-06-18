@@ -25,6 +25,12 @@ class CaisseController extends Controller
     }
 
     public function ajouter(){
+        // on verifie si on n'as deja des  employés en BD
+        $employesAll = Employe::all()[0];
+        if(empty($employesAll)){
+            Session::flash('statuscode','error');
+            return redirect("/employe/create")->with('status','vous devez d\'abord ajouter un employé !')
+        }
         // on ajoute le montant dans la caisse
         $caisse = new Caisse();
         request()->validate([
