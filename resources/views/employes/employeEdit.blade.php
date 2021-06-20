@@ -69,8 +69,13 @@
                                 <input type="file" name="profile" class="custom-file-input" id="inputGroupFile04"
                                     value="{{ $employe->profile }}">
                                 <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-                                <img class="img-circle" src="{{ asset('uploads/employes/' . $employe->profile) }}"
+                                @if ($employe->profile)
+                                    <img class="img-circle" src="{{ asset('uploads/employes/' . $employe->profile) }}"
                                     width="70px" height="70px">
+                                @else
+                                    <img src="{{ asset('uploads/employes/user_100.png') }}"
+                                    class="h-75 align-self-end" width="70px" height="70px" alt="" />
+                                @endif
                             </div>
                         </div>
 

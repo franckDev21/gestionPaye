@@ -78,8 +78,13 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="symbol symbol-50 symbol-light mr-4">
                                                     <span class="symbol-label">
-                                                        <img src="{{ asset('uploads/employes/' . $row->profile) }}"
+                                                        @if ($row->profile)
+                                                            <img src="{{ asset('uploads/employes/' . $row->profile) }}"
                                                             class="h-75 align-self-end" alt="" />
+                                                        @else
+                                                            <img src="{{ asset('uploads/employes/user_100.png') }}"
+                                                            class="h-75 align-self-end" alt="" />
+                                                        @endif
                                                     </span>
                                                 </div>
                                                 <div>

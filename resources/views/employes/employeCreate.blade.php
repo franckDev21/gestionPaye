@@ -50,7 +50,7 @@
                                 @csrf
                                 <!--begin::Form Wizard Step 1-->
                                 <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
-                                    <h3 class="mb-10 font-weight-bold text-dark">Ajouter un Employé:</h3>
+                                    <h3 class="mb-10 font-weight-bold text-dark">Ajouter un Employé</h3>
                                     <div class="row">
                                         <div class="col-xl-12">
                                             <div class="form-group row">
@@ -78,28 +78,40 @@
                                                 </div>
                                             </div>
 
-
-
-
                                             <div class="form-group row">
-                                                <label class="col-xl-3 col-lg-3 col-form-label">Matricule</label>
+                                                <label class="col-xl-3 col-lg-3 col-form-label">matricule</label>
                                                 <div class="col-lg-9 col-xl-9">
-                                                    <input class="form-control form-control-lg form-control-solid"
-                                                        name="matricule" type="text" />
+                                                    <input class="disabled form-control form-control-lg form-control-solid @error('matricule') is-invalid @enderror"
+                                                        name="matricule" value="{{$matricule ?? old('matricule')}}" type="text" />
+                                                    @error('matricule') 
+                                                        <div class="invalid-feedback" style="background-color:#fff">
+                                                            {{ $errors->first('matricule') }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Noms_Prenoms</label>
                                                 <div class="col-lg-9 col-xl-9">
-                                                    <input class="form-control form-control-lg form-control-solid"
-                                                        name="noms_prenoms" type="text" />
+                                                    <input placeholder="Entrer le nom et le prenom de l'employé" class="form-control form-control-lg form-control-solid @error('noms_prenoms') is-invalid @enderror"
+                                                        name="noms_prenoms" type="text" value="{{old('noms_prenoms')}}" />
+                                                    @error('noms_prenoms') 
+                                                        <div class="invalid-feedback" style="background-color:#fff">
+                                                            {{ $errors->first('noms_prenoms') }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">CNI</label>
                                                 <div class="col-lg-9 col-xl-9">
-                                                    <input class="form-control form-control-lg form-control-solid"
-                                                        name="cni" type="text" value="Loop Inc." />
+                                                    <input placeholder="Entrer le numéro de cni " class="form-control form-control-lg form-control-solid @error('cni') is-invalid @enderror"
+                                                        name="cni" type="text" value="{{old('cni')}}" />
+                                                    @error('cni') 
+                                                        <div class="invalid-feedback" style="background-color:#fff">
+                                                            {{ $errors->first('cni') }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -112,8 +124,13 @@
                                                             </span>
                                                         </div>
                                                         <input type="text"
-                                                            class="form-control form-control-lg form-control-solid"
-                                                            name="telephone" value="4567896745" placeholder="Phone" />
+                                                            class="form-control form-control-lg form-control-solid @error('telephone') is-invalid @enderror"
+                                                            name="telephone" value="{{old('telephone')}}" placeholder="Entrer le numéro de téléphone" />
+                                                        @error('telephone') 
+                                                            <div class="invalid-feedback" style="background-color:#fff">
+                                                                {{ $errors->first('telephone') }}
+                                                            </div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,8 +144,13 @@
                                                             </span>
                                                         </div>
                                                         <input type="text"
-                                                            class="form-control form-control-lg form-control-solid"
-                                                            name="email" value="anna.krox@loop.com" placeholder="Email" />
+                                                            class="form-control form-control-lg form-control-solid @error('email') is-invalid @enderror"
+                                                            name="email" value="{{old('email')}}" placeholder="Email (anna.krox@loop.com)" />
+                                                            @error('email') 
+                                                                <div class="invalid-feedback" style="background-color:#fff">
+                                                                    {{ $errors->first('email') }}
+                                                                </div>
+                                                            @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,9 +158,14 @@
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Date Naissance</label>
                                                 <div class="col-lg-9 col-xl-9">
                                                     <div class="input-group input-group-lg input-group-solid">
-                                                        <input type="date"
-                                                            class="form-control form-control-lg form-control-solid"
-                                                            name="date_naissance" />
+                                                        <input type="date" value="{{old('date_naissance')}}"
+                                                            class="form-control form-control-lg form-control-solid @error('date_naissance') is-invalid @enderror"
+                                                            name="date_naissance" placeholder="Entrer la date naissance" />
+                                                        @error('date_naissance') 
+                                                            <div class="invalid-feedback" style="background-color:#fff">
+                                                                {{ $errors->first('date_naissance') }}
+                                                            </div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -147,9 +174,14 @@
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Ville</label>
                                                 <div class="col-lg-9 col-xl-9">
                                                     <div class="input-group input-group-lg input-group-solid">
-                                                        <input type="text"
-                                                            class="form-control form-control-lg form-control-solid"
-                                                            name="ville" />
+                                                        <input type="text" value="{{old('ville')}}"
+                                                            class="form-control form-control-lg form-control-solid @error('ville') is-invalid @enderror"
+                                                            name="ville" placeholder="Entrer la ville" />
+                                                        @error('ville') 
+                                                            <div class="invalid-feedback" style="background-color:#fff">
+                                                                {{ $errors->first('ville') }}
+                                                            </div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,9 +190,14 @@
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Addresse</label>
                                                 <div class="col-lg-9 col-xl-9">
                                                     <div class="input-group input-group-lg input-group-solid">
-                                                        <input type="text"
-                                                            class="form-control form-control-lg form-control-solid"
-                                                            name="addresse" />
+                                                        <input type="text" value="{{old('addresse')}}"
+                                                            class="form-control form-control-lg form-control-solid @error('addresse') is-invalid @enderror"
+                                                            name="addresse" placeholder="Entrer l'adresse de l'employé" />
+                                                        @error('addresse') 
+                                                            <div class="invalid-feedback" style="background-color:#fff">
+                                                                {{ $errors->first('addresse') }}
+                                                            </div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -169,22 +206,32 @@
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Grade</label>
                                                 <div class="col-lg-9 col-xl-9">
                                                     <select name="grade"
-                                                        class="form-control form-control-lg form-control-solid">
+                                                        class="form-control form-control-lg form-control-solid @error('grade') is-invalid @enderror">
                                                         <option value="A">A</option>
                                                         <option value="B">B</option>
                                                         <option value="C">C</option>
                                                     </select>
+                                                    @error('grade') 
+                                                        <div class="invalid-feedback" style="background-color:#fff">
+                                                            {{ $errors->first('grade') }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Departement</label>
                                                 <div class="col-lg-9 col-xl-9">
                                                     <select name="departement"
-                                                        class="form-control form-control-lg form-control-solid">
+                                                        class="form-control form-control-lg form-control-solid @error('departement') is-invalid @enderror">
                                                         <option value="finance">FINANCE</option>
                                                         <option value="informatique">INFORMATIQUE</option>
                                                         <option value="marketing">MARKETING</option>
                                                     </select>
+                                                    @error('departement') 
+                                                        <div class="invalid-feedback" style="background-color:#fff">
+                                                            {{ $errors->first('departement') }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
@@ -192,9 +239,14 @@
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Poste</label>
                                                 <div class="col-lg-9 col-xl-9">
                                                     <div class="input-group input-group-lg input-group-solid">
-                                                        <input type="text"
-                                                            class="form-control form-control-lg form-control-solid"
+                                                        <input type="text" value="{{old('poste')}}" placeholder="Entrer le poste de l'employé"
+                                                            class="form-control form-control-lg form-control-solid @error('poste') is-invalid @enderror"
                                                             name="poste" />
+                                                        @error('poste') 
+                                                            <div class="invalid-feedback" style="background-color:#fff">
+                                                                {{ $errors->first('poste') }}
+                                                            </div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -203,10 +255,15 @@
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Sexe</label>
                                                 <div class="col-lg-9 col-xl-9">
                                                     <select name="sexe"
-                                                        class="form-control form-control-lg form-control-solid">
+                                                        class="form-control form-control-lg form-control-solid @error('sexe') is-invalid @enderror">
                                                         <option value="homme">homme</option>
                                                         <option value="femme">femme</option>
                                                     </select>
+                                                    @error('sexe') 
+                                                        <div class="invalid-feedback" style="background-color:#fff">
+                                                            {{ $errors->first('sexe') }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
@@ -244,6 +301,10 @@
 @endsection
 
 @section('scripts')
+    <script>
+        let fieldsDisabled = document.querySelector('input.disabled')
+        fieldsDisabled.addEventListener('keydown',e=>e.preventDefault())
+    </script>
 
     <script src="assets/js/pages/custom/contacts/add-contact.js"></script>
 

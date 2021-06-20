@@ -28,9 +28,6 @@ class CreateEmployeTable extends Migration
             $table->string('departement');
             $table->string('poste');
             $table->string('sexe');
-            $table->integer('prime1')->nullable();
-            $table->integer('prime2')->nullable();
-            $table->integer('prime3')->nullable();
             $table->timestamps();
         });
     }

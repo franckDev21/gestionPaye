@@ -122,17 +122,6 @@ var KTContactsAdd = function () {
 							}
 						}
 					},
-					telephone: {
-						validators: {
-							notEmpty: {
-								message: 'TelePhone est obligatoire'
-							},
-							phone: {
-								country: 'US',
-								message: 'The value is not a valid US phone number. (e.g 5554443333)'
-							}
-						}
-					},
 					email: {
 						validators: {
 							notEmpty: {
@@ -169,7 +158,7 @@ var KTContactsAdd = function () {
 					cni: {
 						validators: {
 							notEmpty: {
-								message: 'CNIest obligatoire'
+								message: 'CNI est obligatoire'
 							}
 						}
 					},
