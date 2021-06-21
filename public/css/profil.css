@@ -15,6 +15,15 @@
     background-color: var(--warning);
 }
 
+@media screen and (max-width:480px) {
+    .card__span{
+        top: 10px;
+        left: 10px;
+        font-size: 9px;
+        padding: 5px;
+    }
+}
+
 .card__profil{
     width: 100%;
     max-width: 150px;

@@ -6,6 +6,7 @@
 
 @section('css')
     <link href="css/main.css" rel="stylesheet" />
+    <link href="{{asset('css/search.css')}}" rel="stylesheet" />
 @endsection
 
 @section('col')
@@ -23,43 +24,20 @@
         @if(session()->has('message'))
             <div class="alert" style="background-color:#dc0f357a;color:#fff">{{  session()->get('message') }}</div>
         @endif
-        <!--begin::Card-->
-        <div class="card card-custom">
-            <div class="card-header flex-wrap py-5 justify-content-center">
-                <div class="card-title">
-                    <h3 class="card-label">Voulez-vous payer un employé???</h3>
-                </div>
-                <form class="form-inline my-2 my-lg-0" method="post" action="/search">
+        
+        <div class="search">
+            <div class="search__content">
+                <div class="search__label">Rechercher un employé</div>
+                <form class="search__form" method="post" action="/search">
                     @csrf
-
-                    <input class="form-control mr-sm-2" type="text" placeholder="Entrez le matricule de l'employé"
+                    @method('POST')
+                    <input class="search__input" type="text" placeholder="Entrez le matricule de l'employé"
                         name="query">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <button class="search__btn" type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
-            </form>
-
-
         </div>
-
-        <div class="s004">
-            {{-- <form class="form-inline my-2 my-lg-0" method="post" action="{{url('search')}}">
-      {{method_field('post')}}
-	     @csrf
-        <fieldset>
-          <legend>Voulez-Vous payer les primes d'un employé?</legend>
-          <div class="inner-form">
-            
-          </div>
-          
-        </fieldset>
-      </form> --}}
-        </div>
-
     </div>
-    <!--end::Container-->
-
-
-
 
 @endsection
 

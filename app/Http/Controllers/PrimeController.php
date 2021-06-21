@@ -34,6 +34,11 @@ class PrimeController extends Controller
     }
 
     public function decaisser($id_employer){
+
+        if($this->dejaDecaisser($id_employer)){
+            Session::flash('statuscode' , 'error');
+            return  redirect("/employe/{$id_employer}")->with('status' , 'Le compte est vide');
+        }
         // on recherche l'employer qui veux decaisser
         $employer = Employe::find($id_employer);
         // on recherche toutes les primes associers a cet employer
@@ -107,6 +112,22 @@ class PrimeController extends Controller
 
         Session::flash('statuscode' , 'success');
         return  redirect("/employe/{$employer->id}")->with('status' , 'Montant décaisser avec succès');
+    }
+
+    public function dejaDecaisser($id_employer){
+        // on recherche l'employer qui veux decaisser
+        $employer = Employe::find($id_employer);
+        // on recherche toutes les primes associers a cet employer
+        $primeForEmployes = DB::table('primes')->where('id_employe',$employer->id)->get();
+        
+        $dejaDecaisser = false;
+
+        foreach($primeForEmployes as $prime){
+            if($prime->primeA <= 0){
+                $dejaDecaisser = true;
+            }
+        }
+        return $dejaDecaisser;
     }
 
 }
