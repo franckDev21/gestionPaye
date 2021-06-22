@@ -53,7 +53,7 @@
 						<div class="col-md-2">
 							<label for="order">Trier par ordre</label>
 							<div class="d-flex align-items-center">
-								<strong style="color:var(--primary)">Desc</strong>&nbsp;<input type="radio" style="height: 18px;width:18px" value="desc" name="trie" class="mr-1" id="">
+								<strong style="color:var(--primary)">Desc</strong>&nbsp;<input checked type="radio" style="height: 18px;width:18px" value="desc" name="trie" class="mr-1" id="">
 								&nbsp;&nbsp;&nbsp; <strong style="color:var(--primary)">Asc</strong>&nbsp;<input type="radio" style="height: 18px;width:18px" value="asc" name="trie" class="mr-1" id="">
 							</div>
 						</div>
@@ -115,7 +115,7 @@
 										<em><?= getEmploye($item->id_employe)->matricule ?></em>
 									</td>
 									<td>
-										<strong style="font-size: 17px">{{$item->montant}}</strong>
+										<strong style="font-size: 17px">{{floor($item->montant)}} FCFA</strong>
 									</td>
 									<td> 
 										<span style="font-size: 16px">{{$item->created_at->format('d M Y')}}</span><br>
@@ -143,14 +143,35 @@
 			let form2 = document.querySelector(".form2")
 			let result = document.querySelector(".result")
 
-			let employerId = null
+			let employerId = false
 
 			document.querySelector('.btn_ref_form2').addEventListener('click',e=>{
-				if(employerId){
-					form2.submit()
+				
+				let dateDebut = document.querySelector('input[name="debut"]')
+				let dateFin = document.querySelector('input[name="fin"]')
+				
+				if(employerId || (dateDebut.value !== "" || dateFin.value !== "")){
+					// on verifie si les dates sont logiques
+					if(dateDebut.value !== "" && dateFin.value !== ""){
+						dateDebut 	= new Date(dateDebut.value)
+						dateFin   	= new Date(dateFin.value)
+						if(dateDebut > dateFin){
+							let errorDiv = document.querySelector('.error_message')
+							errorDiv.innerHTML = "<div class='alert alert-danger'>veuillez saisir une date correcte s’il vous plaît !</div>"
+							let id = setTimeout(()=>{
+								errorDiv.innerHTML = ''
+							},10000)
+						}else{
+							// on envoi le formulaire si tous ok
+							form2.submit()
+						}
+					}else{
+						// on envoi le formulaire si tous ok
+						form2.submit()
+					}
 				}else{
 					let errorDiv = document.querySelector('.error_message')
-					errorDiv.innerHTML = "<div class='alert alert-danger'>vous devez sélectionnez un employé avant de soumettre le formulaire</div>"
+					errorDiv.innerHTML = "<div class='alert alert-danger'>vous devez sélectionnez un employé ou une date avant de soumettre le formulaire</div>"
 					let id = setTimeout(()=>{
 						errorDiv.innerHTML = ''
 					},10000)
@@ -167,8 +188,8 @@
 						inputSearch.value = ''
 
 						employerId= data.dataset.id
-						console.log(employerId)
-						document.querySelector('.parent__employer').style.backgroundColor= "#E1F0FF"
+						document.querySelector('.parent__employer').style.backgroundColor= "#06af1560"
+						document.querySelector('.parent__employer').firstElementChild.style.color = "#fff"
 						employeField.innerHTML = `${data.querySelector('.result__name').innerHTML} <em>(${data.querySelector('.result__matricule').innerHTML})</em>`
 						
 						if(form2.querySelector('.newImput')){
