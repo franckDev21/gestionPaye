@@ -5,34 +5,35 @@ namespace App\Http\Controllers;
 use App\Models\Transaction;
 use App\Http\Controllers\Controller;
 use App\Models\Employe;
+use App\Models\TransactionInt;
+use App\Models\TransactionOut;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
-use Session;
 
 class TransactionController extends Controller
 {
     public function index(){
-       
-
-return view('/transaction' , compact('data'));
-    }
-
-    public function payer(Request $req){
-      
-          $transaction= new Transaction();
-          $transaction -> id = $req->input('id');
-          $transaction -> prime_paye = $req->input('prime_paye');
-          $transaction -> status = $req->input('status');
-          $transaction -> date= $req->input('date'); 
-          $transaction->save();
-         Session::flash('statuscode' , 'success');
-   return  redirect('/transaction')->with('status' , 'Paiement Effectué ');
+        $token = request()->session()->token();
+        $totalTI = [];
+        $totalTO = [];
+        $transactionTnts = TransactionInt::all();
+        foreach($transactionTnts as $TI){
+            $totalTI[] = $TI;
+        }
+        $transactionOuts = TransactionOut::all();
+        foreach($transactionOuts as $TO){
+            $totalTO[] = $TO;
+        }
+        $all = array_merge($totalTI,$totalTO);
+        // on melange le les 2 tableaux
+        shuffle($all);
+        $classNameInt = TransactionInt::class;
+        return view('transaction.index',compact('token','all','classNameInt'));
     }
     
-    /*public function voirtransaction(){
-        $data = Employe::join('transaction','transaction.id' , '=' ,'employe.id')
-                         ->get(['employe.id' ,'employe.noms_prenoms' , 'employe.grade' , 'employe.prime1' , 'employe.prime2' , 'employe.prime3' , 'transaction.prime_paye' , 'transaction.status' , 'transaction.date']);
-    
-       return view('/transaction' , compact('data'));
-                        }*/
+    public function search(){
+        dd(request()->all());
+        return view('transaction.search');
+    }
 }

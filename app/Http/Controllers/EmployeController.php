@@ -163,4 +163,13 @@ class EmployeController extends Controller
         Session::flash('statuscode' , 'error');
         return redirect('/employes')->with('status' , 'Employé supprimé');
     }
+
+    public function searchEmployes(Request $request){
+        if( !empty($_POST['q']) ){
+            $usersSearch = DB::table('employe')
+            ->where('noms_prenoms','like','%'.$request->input('q').'%')
+            ->get();
+            echo json_encode(compact('usersSearch'));
+        }
+    }
 }

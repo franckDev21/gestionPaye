@@ -123,11 +123,12 @@ class PrimeController extends Controller
         $dejaDecaisser = false;
 
         foreach($primeForEmployes as $prime){
-            if($prime->primeA <= 0){
+            if($prime->primeA > 0){
                 $dejaDecaisser = true;
+                break;
             }
         }
-        return $dejaDecaisser;
+        return !$dejaDecaisser;
     }
 
 }

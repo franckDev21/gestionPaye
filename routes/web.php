@@ -25,11 +25,14 @@ Route::group(['middleware' =>['auth' , 'admin']] , function(){
     Route::patch('/employe/{employe}', 'EmployeController@update');
     Route::delete('/employe/{employe}',  'EmployeController@destroy');
 
+    Route::post('/employe/search/all','EmployeController@searchEmployes');
+
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/gerer_paie' , 'GestPaieController@index');
     Route::get('search' , 'GestPaieController@search');
     Route::post('search' , 'GestPaieController@search');
     Route::get('/transaction', 'TransactionController@index');
+    Route::post('/searchTransaction', 'TransactionController@search');
     Route::post('/payer-prime', 'TransactionController@payer');
 
     Route::get('/caisse', 'CaisseController@index');

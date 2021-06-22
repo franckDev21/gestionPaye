@@ -2,6 +2,9 @@
 
 namespace App\Helpers;
 
+use App\Models\Employe;
+use Illuminate\Support\Facades\DB;
+
 class Text{
     
     public static function num_random($length){

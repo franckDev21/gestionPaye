@@ -1,0 +1,80 @@
+.search input{
+    background-image: url('../images/search_20px.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    position: relative;
+}
+.search{
+    padding: 0 15px;
+    border: 1px #ccc solid;
+    position: relative;
+    z-index: 10 !important;
+}
+
+form.search  .result {
+    position: absolute;
+    max-width: 550px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.952);
+    border-radius: 4px;
+    top: 47px;
+    left: 0;
+    right: 0;
+    z-index: 2000 !important;
+    box-shadow:0px 0px 4px rgba(0, 0, 0, 0.322);
+}
+
+.result .result__card:not(:last-child){
+    padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.result .result__card:first-child{
+    padding-top: 10px;
+}
+.result .result__card:last-child {
+    padding-bottom: 10px;
+}
+.result__card{
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.result__card.select:hover{
+    background-color: #6060600e;
+}
+.result__name {
+    font-weight: bold;
+    font-size: 16px;
+    font-style:italic;
+    color:#9e9b9b;
+}
+.result__matricule{
+    color:#9e9b9b;
+    font-style:italic;
+}
+
+.result_noting{
+    font-weight: bold;
+    background-color: rgba(229, 255, 0, 0.274);
+    color: rgba(70, 70, 70, 0.89);
+    font-size: 17px;
+    text-align: center;
+    padding: 5px;
+    cursor: none;
+}
+
+.noting{
+    cursor:none;
+}
+
+.parent__employer{
+    background:#6060600e;
+}
+.employe{
+    font-size: 15px !important;
+}

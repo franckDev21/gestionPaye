@@ -18,7 +18,13 @@
             <div class="col-md-7 card p-4 m-4">
                 <span class="card__span">Profil de l'employé</span>
                 <div class="card__profil">
-                    <img class="card__img" src="{{ asset('uploads/employes/' . $employe->profile) }}">
+                    @if (!empty($employe->profile))
+                        <img src="{{ asset('uploads/employes/' . $employe->profile) }}"
+                        class="card__img" alt="" />
+                    @else
+                        <img src="{{ asset('uploads/employes/user_100.png') }}"
+                        class="card__img" alt="" />
+                    @endif
                 </div>
                 <hr>
                 <div class="row mt-4">
@@ -109,7 +115,7 @@
             <div class="col-md-4 card p-4 m-4">
                 <div class="card__montant">
                     <span class="card__prime">total prime</span>
-                    {{$totalPrimeCalculer}} F
+                    {{floor($totalPrimeCalculer)}} F
                 </div>
                 <div class="card__list">
                     <div class="card__items">
