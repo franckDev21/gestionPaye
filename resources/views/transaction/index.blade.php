@@ -37,10 +37,10 @@
 					<div style="z-index: 1" class="row mt-2 align-items-center bg bg-light-primary p-2">
 						<div class="col-md-2 h6">Type de transaction</div>
 						<div class="col-md-1">
-							<label for="transactionInt" style="color:var(--primary);font-weight:bold">Entrante</label> <input type="checkbox" class="checkbox" checked style="height: 18px;width:18px" name="transactionInt" id="transactionInt">
+							<label for="transactionInt" style="color:var(--primary);font-weight:bold">Entrante</label> <input type="checkbox" class="checkbox"  style="height: 18px;width:18px" name="transactionInt" id="transactionInt">
 						</div>
 						<div class="col-md-1">
-							<label for="transactionOut" style="color:var(--primary);font-weight:bold">Sortante</label> <input type="checkbox" class="checkbox" checked style="height: 18px;width:18px" name="transactionOut" id="transactionOut">
+							<label for="transactionOut" style="color:var(--primary);font-weight:bold">Sortante</label> <input type="checkbox" class="checkbox"  style="height: 18px;width:18px" name="transactionOut" id="transactionOut">
 						</div>
 						<div class="col-md-3">
 							<label for="debut">date debut</label>
@@ -53,7 +53,7 @@
 						<div class="col-md-2">
 							<label for="order">Trier par ordre</label>
 							<div class="d-flex align-items-center">
-								<strong style="color:var(--primary)">Desc</strong>&nbsp;<input checked type="radio" style="height: 18px;width:18px" value="desc" name="trie" class="mr-1" id="">
+								<strong style="color:var(--primary)">Desc</strong>&nbsp;<input  type="radio" style="height: 18px;width:18px" value="desc" name="trie" class="mr-1" id="">
 								&nbsp;&nbsp;&nbsp; <strong style="color:var(--primary)">Asc</strong>&nbsp;<input type="radio" style="height: 18px;width:18px" value="asc" name="trie" class="mr-1" id="">
 							</div>
 						</div>
@@ -177,11 +177,18 @@
 						form2.submit()
 					}
 				}else{
-					let errorDiv = document.querySelector('.error_message')
-					errorDiv.innerHTML = "<div class='alert alert-danger'>vous devez sélectionnez un employé ou une date avant de soumettre le formulaire</div>"
-					let id = setTimeout(()=>{
-						errorDiv.innerHTML = ''
-					},10000)
+                    let transactionInt = document.querySelector('input[name="transactionInt"]');
+                    let transactionOut = document.querySelector('input[name="transactionOut"]');
+                    if(transactionOut.checked==false && transactionInt.checked==false){
+                        let errorDiv = document.querySelector('.error_message')
+                        errorDiv.innerHTML = "<div class='alert alert-danger'>vous devez sélectionnez un employé ou une date avant de soumettre le formulaire</div>"
+                        let id = setTimeout(()=>{
+                            errorDiv.innerHTML = ''
+                        },10000)
+                    }else{
+                        // on envoi le formulaire si tous ok
+						form2.submit()
+                    }
 				}
 			})
 
