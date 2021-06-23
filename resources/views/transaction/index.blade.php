@@ -62,72 +62,79 @@
 				</div>
 			
 			<div class="card-body row">
-				<table class="table table-head-custom table-responsive-sm">
-					<thead>
-						<tr>
-							<th></th>
-							<th>Type</th>
-							<th>Employé</th>
-							<th>Montant</th>
-							<th>Date (reception/retrait)</th>
-							<th>Provient de la caisse</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach ($all as $item)
-							@if ($item instanceof $classNameInt)
-								<tr style="background-color: #06af1534">
-									<td>
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20pt" height="20pt" viewBox="0 0 30 30" version="1.1">
-											<g id="surface1">
-												<path style=" stroke:none;fill-rule:nonzero;fill:#109c10;fill-opacity:1;" d="M 24.671875 3.949219 C 24.648438 3.949219 22.265625 3.96875 19.84375 5.839844 C 16.714844 8.257813 14.984375 12.710938 14.816406 18.75 L 18.75 18.75 C 19.148438 18.75 19.507813 18.988281 19.664063 19.359375 C 19.8125 19.730469 19.730469 20.152344 19.449219 20.433594 L 12.539063 27.34375 C 12.15625 27.726563 11.53125 27.726563 11.144531 27.34375 L 4.238281 20.433594 C 3.957031 20.152344 3.871094 19.730469 4.019531 19.359375 C 4.175781 18.988281 4.539063 18.75 4.933594 18.75 L 8.898438 18.75 C 9.429688 2.453125 23.085938 1.972656 24.671875 1.972656 C 25.21875 1.972656 25.65625 2.417969 25.65625 2.960938 C 25.65625 3.503906 25.21875 3.949219 24.671875 3.949219 Z "/>
-											</g>
-										</svg>
-									</td>
-									<td><strong style="font-size: 17px; color:#109c10;">Prime</strong></td>
-									<td>
-										<strong><?= getEmploye($item->id_employe)->noms_prenoms ?></strong> <br>
-										<em><?= getEmploye($item->id_employe)->matricule ?></em>
-									</td>
-									<td>
-										<strong style="font-size: 17px">{{floor($item->totalPrimes)}} FCFA</strong>
-									</td>
-									<td> 
-										<span style="font-size: 16px">{{$item->created_at->format('d M Y')}}</span><br>
-										<em>(le {{$item->created_at->format('d/m/Y \a H\hi ')}})</em>
-									</td>
-									<td>
-										<strong style="font-size: 17px"><?= getCaisse($item->id_caisse)->montant ?> FCFA</strong>
-									</td>
-								</tr>
-							@else
-								<tr style="background-color: #f64e5f34">
-									<td>
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20pt" height="20pt" viewBox="0 0 30 30" version="1.1">
-											<g id="surface1">
-												<path style=" stroke:none;fill-rule:nonzero;fill:#F64E60;fill-opacity:1;" d="M 4.933594 25.65625 C 4.957031 25.65625 7.339844 25.636719 9.757813 23.765625 C 12.890625 21.347656 14.621094 16.894531 14.789063 10.855469 L 10.855469 10.855469 C 10.457031 10.855469 10.097656 10.617188 9.941406 10.246094 C 9.792969 9.875 9.875 9.453125 10.15625 9.171875 L 17.066406 2.261719 C 17.449219 1.878906 18.074219 1.878906 18.460938 2.261719 L 25.367188 9.171875 C 25.648438 9.453125 25.734375 9.875 25.585938 10.246094 C 25.429688 10.617188 25.066406 10.855469 24.671875 10.855469 L 20.707031 10.855469 C 20.175781 27.152344 6.519531 27.632813 4.933594 27.632813 C 4.386719 27.632813 3.949219 27.1875 3.949219 26.644531 C 3.949219 26.101563 4.386719 25.65625 4.933594 25.65625 Z "/>
-											</g>
-										</svg>
-									</td>
-									<td><strong style="font-size: 17px;color:#F64E60">Retrait</strong></td>
-									<td>
-										<strong><?= getEmploye($item->id_employe)->noms_prenoms ?></strong> <br>
-										<em><?= getEmploye($item->id_employe)->matricule ?></em>
-									</td>
-									<td>
-										<strong style="font-size: 17px">{{floor($item->montant)}} FCFA</strong>
-									</td>
-									<td> 
-										<span style="font-size: 16px">{{$item->created_at->format('d M Y')}}</span><br>
-										<em>(le {{$item->created_at->format('d/m/Y \a H\hi ')}})</em>
-									</td>
-									<td></td>
-								</tr>
-							@endif
-						@endforeach
-						
-					</tbody>
-				</table>
+				@empty($all)
+					<div class="result__card noting p-4" style="width: 100%;">
+						<div class="result_noting p-4">Aucune transaction effectué</div>
+					</div>
+				@else
+					<table class="table table-head-custom table-responsive-sm">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Type</th>
+								<th>Employé</th>
+								<th>Montant</th>
+								<th>Date (reception/retrait)</th>
+								<th>Provient de la caisse</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach ($all as $item)
+								@if ($item instanceof $classNameInt)
+									<tr style="background-color: #06af1534">
+										<td>
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20pt" height="20pt" viewBox="0 0 30 30" version="1.1">
+												<g id="surface1">
+													<path style=" stroke:none;fill-rule:nonzero;fill:#109c10;fill-opacity:1;" d="M 24.671875 3.949219 C 24.648438 3.949219 22.265625 3.96875 19.84375 5.839844 C 16.714844 8.257813 14.984375 12.710938 14.816406 18.75 L 18.75 18.75 C 19.148438 18.75 19.507813 18.988281 19.664063 19.359375 C 19.8125 19.730469 19.730469 20.152344 19.449219 20.433594 L 12.539063 27.34375 C 12.15625 27.726563 11.53125 27.726563 11.144531 27.34375 L 4.238281 20.433594 C 3.957031 20.152344 3.871094 19.730469 4.019531 19.359375 C 4.175781 18.988281 4.539063 18.75 4.933594 18.75 L 8.898438 18.75 C 9.429688 2.453125 23.085938 1.972656 24.671875 1.972656 C 25.21875 1.972656 25.65625 2.417969 25.65625 2.960938 C 25.65625 3.503906 25.21875 3.949219 24.671875 3.949219 Z "/>
+												</g>
+											</svg>
+										</td>
+										<td><strong style="font-size: 17px; color:#109c10;">Prime</strong></td>
+										<td>
+											<strong><?= getEmploye($item->id_employe)->noms_prenoms ?></strong> <br>
+											<em><?= getEmploye($item->id_employe)->matricule ?></em>
+										</td>
+										<td>
+											<strong style="font-size: 17px">{{floor($item->totalPrimes)}} FCFA</strong>
+										</td>
+										<td> 
+											<span style="font-size: 16px">{{$item->created_at->format('d M Y')}}</span><br>
+											<em>(le {{$item->created_at->format('d/m/Y \a H\hi ')}})</em>
+										</td>
+										<td>
+											<strong style="font-size: 17px"><?= getCaisse($item->id_caisse)->montant ?> FCFA</strong>
+										</td>
+									</tr>
+								@else
+									<tr style="background-color: #f64e5f34">
+										<td>
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20pt" height="20pt" viewBox="0 0 30 30" version="1.1">
+												<g id="surface1">
+													<path style=" stroke:none;fill-rule:nonzero;fill:#F64E60;fill-opacity:1;" d="M 4.933594 25.65625 C 4.957031 25.65625 7.339844 25.636719 9.757813 23.765625 C 12.890625 21.347656 14.621094 16.894531 14.789063 10.855469 L 10.855469 10.855469 C 10.457031 10.855469 10.097656 10.617188 9.941406 10.246094 C 9.792969 9.875 9.875 9.453125 10.15625 9.171875 L 17.066406 2.261719 C 17.449219 1.878906 18.074219 1.878906 18.460938 2.261719 L 25.367188 9.171875 C 25.648438 9.453125 25.734375 9.875 25.585938 10.246094 C 25.429688 10.617188 25.066406 10.855469 24.671875 10.855469 L 20.707031 10.855469 C 20.175781 27.152344 6.519531 27.632813 4.933594 27.632813 C 4.386719 27.632813 3.949219 27.1875 3.949219 26.644531 C 3.949219 26.101563 4.386719 25.65625 4.933594 25.65625 Z "/>
+												</g>
+											</svg>
+										</td>
+										<td><strong style="font-size: 17px;color:#F64E60">Retrait</strong></td>
+										<td>
+											<strong><?= getEmploye($item->id_employe)->noms_prenoms ?></strong> <br>
+											<em><?= getEmploye($item->id_employe)->matricule ?></em>
+										</td>
+										<td>
+											<strong style="font-size: 17px">{{floor($item->montant)}} FCFA</strong>
+										</td>
+										<td> 
+											<span style="font-size: 16px">{{$item->created_at->format('d M Y')}}</span><br>
+											<em>(le {{$item->created_at->format('d/m/Y \a H\hi ')}})</em>
+										</td>
+										<td></td>
+									</tr>
+								@endif
+							@endforeach
+							
+						</tbody>
+					</table>
+				@endempty
+				
 			</div>
 		</div>	
 	</div>
