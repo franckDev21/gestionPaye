@@ -6,6 +6,7 @@ use App\Helpers\Text;
 use App\Models\Employe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Barcode;
 use App\Models\TransactionInt;
 use App\Models\TransactionOut;
 use Illuminate\Support\Facades\DB;
@@ -105,6 +106,12 @@ class EmployeController extends Controller
             $employe->profile = $filename;
         }
         $employe->save();
+
+        // on creer le code barre
+        $barcode = new Barcode();
+        $barcode->employe_id = $employe->id;
+        $barcode->save();
+        
         Session::flash('statuscode' , 'success');
         return  redirect('/employe')->with('status' , 'Employé ajouté avec succès');
     }

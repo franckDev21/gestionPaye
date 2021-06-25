@@ -1,0 +1,14 @@
+.barcode{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-right: 1px solid #ccc;
+    margin-bottom: 40px;
+}
+.row .barcode:last-child{
+    border: none;
+    margin: 0;
+}
+.barcode{
+    font-size: 16px;
+}

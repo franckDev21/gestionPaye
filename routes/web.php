@@ -15,7 +15,10 @@ Auth::routes();
 
 Route::group(['middleware' =>['auth' , 'admin']] , function(){
 
-    Route::get('/dash', 'DashboardController@index');    
+    Route::get('/dash', 'DashboardController@index');
+    
+    Route::get('/barcode','BarcodeController@index');
+    Route::get('/download/{id}/barcode',"BarcodeController@create");
 
     Route::get('/employe', 'EmployeController@index');
     Route::get('/employe/create', 'EmployeController@create');
@@ -42,13 +45,8 @@ Route::group(['middleware' =>['auth' , 'admin']] , function(){
     Route::get('edit-montant/{id}', 'CaisseController@editcaisse');
     Route::post('/modifie-montant/{id}', 'CaisseController@modifier');
 
-    Route::get('employeeinformations', function () {
-        return view('employeeprofil');
-    });
-
-    Route::get('/prime', 'PrimeController@index');
-
     Route::post('/save-prime', 'PrimeController@ajouterprime');
+
 });
 
 
