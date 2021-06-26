@@ -40,6 +40,7 @@
 @section('content')
     <div class="container">
         <div class="card p-d">
+            <?php dump($_SERVER) ?>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-5">

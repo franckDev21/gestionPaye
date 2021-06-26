@@ -11,3 +11,7 @@ function getCaisse($id){
     $caisse = DB::table('caisse')->where('id_caisse',$id)->first();
     return $caisse;
 }
+
+function navLink(string $link):?string{
+    return $_SERVER['REQUEST_URI'] === $link ? 'active':null;
+}
