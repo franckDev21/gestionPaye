@@ -28,7 +28,7 @@
                 <!--end::Button-->
                 <!--begin::Button-->
                 <button class="btn btn-primary font-weight-bold py-2 px-5 ml-2" data-toggle="modal"
-                    data-target="#exampleModal">télecharger le code barre de tous le employés &nbsp;Télécharger son code barre<i class="fas fa-download"></i></button>
+                    data-target="#exampleModal">télecharger le code barre de tous le employés &nbsp;<i class="fas fa-download"></i></button>
                 <!--end::Button-->
             </div>
             <!--end::Toolbar-->
