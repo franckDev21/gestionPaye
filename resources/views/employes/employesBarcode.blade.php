@@ -27,8 +27,8 @@
                 <a href="#" class=""></a>
                 <!--end::Button-->
                 <!--begin::Button-->
-                <button class="btn btn-primary font-weight-bold py-2 px-5 ml-2" data-toggle="modal"
-                    data-target="#exampleModal">télecharger le code barre de tous le employés &nbsp;<i class="fas fa-download"></i></button>
+                <button class="btn btn-theme font-weight-bold py-2 px-5 ml-2" data-toggle="modal"
+                    data-target="#exampleModal">télecharger le code barre de tous le employés &nbsp;<i class="fas fa-download" style="color: #fff;"></i></button>
                 <!--end::Button-->
             </div>
             <!--end::Toolbar-->
