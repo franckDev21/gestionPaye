@@ -62,15 +62,16 @@ License: You must have a valid license purchased only from themeforest(the above
             background-color: #254225 !important;
         }
         .theme-yellow{
-            background-color: #ffff00cc;
+            background-color: #ffff00cc !important;
         }
         .bg.bg-primary,.text-primary{
             background-color: #ffff00cc !important;
             color: #fff !important;
         }
         .btn-theme{
-            background-color: #ffff00;
-            color:#fff;
+            background-color: #eeee23 !important;
+            color:#fff !important;
+            box-shadow: 0px 0px 2px rgba(204, 204, 204, 0.267);
         }
     </style>
 </head>

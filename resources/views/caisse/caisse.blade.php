@@ -23,7 +23,7 @@
                 <a href="#" class=""></a>
                 <!--end::Button-->
                 <!--begin::Button-->
-                <button class="btn btn-primary font-weight-bold py-2 px-5 ml-2" data-toggle="modal"
+                <button class="btn btn-theme font-weight-bold py-2 px-5 ml-2" data-toggle="modal"
                     data-target="#exampleModal">Ajouter un Montant</button>
                 <!--end::Button-->
 

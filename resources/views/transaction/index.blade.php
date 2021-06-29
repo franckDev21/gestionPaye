@@ -28,7 +28,7 @@
 							<span class="h5 text-center employe" style="color: #606060">Aucun Employé (veillez rechercher un employé)</span>
 						</div>
 						<div class="col-md-3">
-							<button  style="border-radius: 0" class="btn_ref_form2 btn btn-lg btn-primary">Rechercher transaction(s)</button>
+							<button  style="border-radius: 0" class="btn_ref_form2 btn btn-lg btn-theme">Rechercher transaction(s)</button>
 						</div>
 					</div>
 				<form action="/searchTransaction" method="POST" class="form2">

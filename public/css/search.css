@@ -29,6 +29,10 @@
     padding-bottom: 20px;
 }
 
+.search__content .search__label::first-letter {
+    color: green;
+    text-shadow: .5px 0px 7px #fff;
+}
 .search__label::after{
     content: "";
     display: block;
@@ -36,7 +40,7 @@
     height: 1px;
     margin: 0 auto;
     border-radius: 2px;
-    background-color: #fff;
+    background-color: #fff
 }
 
 .search__form{
@@ -59,8 +63,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    background-color: var(--primary);
+    background-color: #eeee23 !important;
+    color:#fff !important;
+    box-shadow: 0px 0px 2px rgba(204, 204, 204, 0.267);
     outline: none;
     border: none;
     cursor: pointer;

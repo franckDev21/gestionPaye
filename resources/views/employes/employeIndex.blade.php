@@ -30,7 +30,7 @@
                 <a href="#" class=""></a>
                 <!--end::Button-->
                 <!--begin::Button-->
-                <a href="/employe/create" class="btn btn-primary font-weight-bolder"><i class="fa fa-plus"></i>Nouveau
+                <a href="/employe/create" class="btn-theme btn font-weight-bolder"><i style="color: #fff" class="fa fa-plus"></i>Nouveau
                     Employé</a>
                 <!--end::Button-->
             </div>
@@ -137,7 +137,7 @@
                                             </a>
                                             <a href="employe/{{ $row->id }}/edit"
                                                 class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
-                                                <span class="svg-icon svg-icon-md svg-icon-primary">
+                                                <span class="svg-icon svg-icon-md svg-icon-success ">
                                                     <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg-->
                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                         xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -159,7 +159,7 @@
 
 
                                             <a class="btn btn-icon btn-light btn-hover-primary btn-sm">
-                                                <span class="svg-icon svg-icon-md svg-icon-primary">
+                                                <span class="svg-icon svg-icon-md svg-icon-danger">
                                                     <!--begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg-->
                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                         xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"

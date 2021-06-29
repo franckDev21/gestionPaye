@@ -30,7 +30,7 @@
                             employé)</span>
                     </div>
                     <div class="col-md-3">
-                        <button style="border-radius: 0" class="btn_ref_form2 btn btn-lg btn-primary">Rechercher
+                        <button style="border-radius: 0" class="btn_ref_form2 btn btn-lg btn-theme">Rechercher
                             transaction(s)</button>
                     </div>
                 </div>
