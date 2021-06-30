@@ -58,7 +58,7 @@
                                 <strong>{{ $barcode->employe->noms_prenoms }}</strong>
                                 <div class="span">{{ $barcode->employe->matricule }}</div>
                             </div>
-                            <a href="/download/{{ $barcode->employe->id }}/barcode" class="btn btn-primary">Télécharger &nbsp;<i class="fas fa-download"></i></a>
+                            <a href="/download/{{ $barcode->employe->id }}/barcode" class="btn btn-theme">Télécharger &nbsp;<i style="color:#fff" class="fas fa-download"></i></a>
                         </div>
                     @empty
                         Aucun employe

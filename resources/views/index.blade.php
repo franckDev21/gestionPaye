@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('banner')
-    <img style="width: 100%; height: 100%;" src="{{ asset("images/banner.jpg") }}" alt="">
+<img style="width: 100%; height: 100%;" src="{{ asset("images/banner.jpg") }}" alt="">
 @endsection
 
 @section('title')
@@ -25,7 +25,7 @@
                 <!--end::Page Title-->
                 <!--begin::Actions-->
                 <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-                <a href="#" class="btn btn-light-warning font-weight-bolder btn-sm">Ajouter un employé</a>
+                <a href="#" class="btn btn-theme font-weight-bolder btn-sm">Ajouter un employé</a>
                 <!--end::Actions-->
             </div>
             <!--end::Info-->
@@ -156,11 +156,11 @@
                 <div class="card card-custom bg-gray-100 card-stretch gutter-b">
                     <!--begin::Header-->
                     <div class="card-header border-0 bg-danger py-5">
-                        <h3 class="card-title font-weight-bolder text-white">Sales Stat</h3>
+                        <h3 class="card-title font-weight-bolder text-white">Total </h3>
                         <div class="card-toolbar">
                             <div class="dropdown dropdown-inline">
                                 <a href="#" class="btn btn-transparent-white btn-sm font-weight-bolder dropdown-toggle px-5"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Export</a>
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">voir plus</a>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                                     <!--begin::Navigation-->
                                     <ul class="navi navi-hover">
@@ -173,7 +173,7 @@
                                                 <span class="navi-icon">
                                                     <i class="flaticon2-shopping-cart-1"></i>
                                                 </span>
-                                                <span class="navi-text">Order</span>
+                                                <span class="navi-text">Caisse</span>
                                             </a>
                                         </li>
                                         <li class="navi-item">
@@ -294,40 +294,32 @@
                                 <div class="col bg-light-danger px-6 py-8 rounded-xl mr-7">
                                     <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
                                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon points="0 0 24 0 24 24 0 24" />
-                                                <path
-                                                    d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z"
-                                                    fill="#000000" fill-rule="nonzero" />
-                                                <path
-                                                    d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z"
-                                                    fill="#000000" opacity="0.3" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="30pt" viewBox="0 0 30 30" version="1.1">
+                                            <g id="surface1">
+                                                <path style=" stroke:none;fill-rule:nonzero;fill:#F64E60;fill-opacity:1;" d="M 14.835938 1.933594 C 14.585938 1.933594 14.332031 2.035156 14.140625 2.226563 L 7.164063 9.207031 C 6.972656 9.394531 6.875 9.644531 6.875 9.902344 C 6.875 10.03125 6.894531 10.15625 6.945313 10.28125 C 7.097656 10.652344 7.464844 10.890625 7.859375 10.890625 L 11.875 10.890625 L 11.875 25.691406 C 11.875 26.785156 12.757813 27.667969 13.851563 27.667969 L 15.824219 27.667969 C 16.914063 27.667969 17.796875 26.785156 17.796875 25.691406 L 17.796875 10.890625 L 21.816406 10.890625 C 22.210938 10.890625 22.574219 10.652344 22.726563 10.28125 C 22.878906 9.910156 22.792969 9.488281 22.511719 9.207031 L 15.535156 2.226563 C 15.34375 2.035156 15.089844 1.933594 14.835938 1.933594 Z "/>
                                             </g>
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">Item Orders</a>
+                                    <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">
+                                        Transactions sortantes <br/>
+                                        <span class="display-block h2" style="color:#606060">12</span>
+                                    </a>
                                 </div>
-                                <div class="col bg-light-success px-6 py-8 rounded-xl">
+                                <div class="col theme px-6 py-8 rounded-xl">
                                     <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
                                         <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Urgent-mail.svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path
-                                                    d="M12.7037037,14 L15.6666667,10 L13.4444444,10 L13.4444444,6 L9,12 L11.2222222,12 L11.2222222,14 L6,14 C5.44771525,14 5,13.5522847 5,13 L5,3 C5,2.44771525 5.44771525,2 6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,13 C19,13.5522847 18.5522847,14 18,14 L12.7037037,14 Z"
-                                                    fill="#000000" opacity="0.3" />
-                                                <path
-                                                    d="M9.80428954,10.9142091 L9,12 L11.2222222,12 L11.2222222,16 L15.6666667,10 L15.4615385,10 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9.80428954,10.9142091 Z"
-                                                    fill="#000000" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="30pt" viewBox="0 0 30 30" version="1.1">
+                                            <g id="surface1">
+                                                <path style=" stroke:none;fill-rule:nonzero;fill:#254225;fill-opacity:1;" d="M 13.851563 1.9375 C 12.757813 1.9375 11.875 2.820313 11.875 3.914063 L 11.875 18.714844 L 7.859375 18.714844 C 7.464844 18.714844 7.101563 18.953125 6.945313 19.320313 C 6.796875 19.691406 6.882813 20.117188 7.164063 20.398438 L 14.140625 27.378906 C 14.523438 27.761719 15.148438 27.761719 15.535156 27.378906 L 22.511719 20.398438 C 22.703125 20.210938 22.804688 19.960938 22.804688 19.703125 C 22.804688 19.574219 22.777344 19.445313 22.726563 19.320313 C 22.578125 18.953125 22.214844 18.714844 21.820313 18.714844 L 17.796875 18.714844 L 17.796875 3.914063 C 17.796875 2.820313 16.914063 1.9375 15.824219 1.9375 Z "/>
                                             </g>
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">Bug Reports</a>
+                                    <a href="#" style="color:#254225;" class=" font-weight-bold font-size-h6 mt-2">
+                                        Transactions entrantes <br>
+                                        <span class="display-block h2" style="color:#fff">32</span>
+                                    </a>
                                 </div>
                             </div>
                             <!--end::Row-->
@@ -344,8 +336,8 @@
                     <!--begin::Header-->
                     <div class="card-header align-items-center border-0 mt-4">
                         <h3 class="card-title align-items-start flex-column">
-                            <span class="font-weight-bolder text-dark">My Activity</span>
-                            <span class="text-muted mt-3 font-weight-bold font-size-sm">890,344 Sales</span>
+                            <span class="font-weight-bolder text-dark">Dernières Transactions</span>
+                            <span class="text-muted mt-3 font-weight-bold font-size-sm">(4 dernières)</span>
                         </h3>
                         <div class="card-toolbar">
                             <div class="dropdown dropdown-inline">
@@ -415,144 +407,6 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-4">
-                        <!--begin::Timeline-->
-                        <div class="timeline timeline-6 mt-3">
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">08:42</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-warning icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Text-->
-                                <div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Outlines keep
-                                    you honest. And keep structure</div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">10:00</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-success icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Content-->
-                                <div class="timeline-content d-flex">
-                                    <span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">AEOL meeting</span>
-                                </div>
-                                <!--end::Content-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">14:37</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-danger icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Desc-->
-                                <div class="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">Make deposit
-                                    <a href="#" class="text-primary">USD 700</a>. to ESL
-                                </div>
-                                <!--end::Desc-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">16:50</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-primary icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Text-->
-                                <div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Indulging in
-                                    poorly driving and keep structure keep great</div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">21:03</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-danger icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Desc-->
-                                <div class="timeline-content font-weight-bolder text-dark-75 pl-3 font-size-lg">New order
-                                    placed
-                                    <a href="#" class="text-primary">#XF-2356</a>.
-                                </div>
-                                <!--end::Desc-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">23:07</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-info icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Text-->
-                                <div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Outlines keep
-                                    and you honest. Indulging in poorly driving</div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">16:50</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-primary icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Text-->
-                                <div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Indulging in
-                                    poorly driving and keep structure keep great</div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="timeline-item align-items-start">
-                                <!--begin::Label-->
-                                <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">21:03</div>
-                                <!--end::Label-->
-                                <!--begin::Badge-->
-                                <div class="timeline-badge">
-                                    <i class="fa fa-genderless text-danger icon-xl"></i>
-                                </div>
-                                <!--end::Badge-->
-                                <!--begin::Desc-->
-                                <div class="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">New order
-                                    placed
-                                    <a href="#" class="text-primary">#XF-2356</a>.
-                                </div>
-                                <!--end::Desc-->
-                            </div>
-                            <!--end::Item-->
-                        </div>
-                        <!--end::Timeline-->
                     </div>
                     <!--end: Card Body-->
                 </div>
@@ -630,7 +484,7 @@
                 </div>
                 <!--end::Stats Widget 12-->
             </div>
-            <div class="col-lg-6 col-xxl-4 order-1 order-xxl-1">
+            {{-- <div class="col-lg-6 col-xxl-4 order-1 order-xxl-1">
                 <!--begin::List Widget 1-->
                 <div class="card card-custom card-stretch gutter-b">
                     <!--begin::Header-->
@@ -2443,7 +2297,7 @@
                     <!--end::Body-->
                 </div>
                 <!--end::Advance Table Widget 2-->
-            </div>
+            </div> --}}
             <div class="col-lg-6 col-xxl-4 order-1 order-xxl-2">
                 <!--begin::List Widget 3-->
                 <div class="card card-custom card-stretch gutter-b">
