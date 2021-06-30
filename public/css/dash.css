@@ -1,0 +1,40 @@
+.total_{
+    display: grid !important;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    grid-gap: 20px;
+}
+
+.total_ *{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.total_ .total{
+    text-align: left;
+    background-color: #7aa97a;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: flex-start;
+    color: #254225 !important;
+}
+
+.total a{
+    color:#fff;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 4px;
+}
+
+.total_ .total span{
+    color: #fff;
+}
+
+.total_ .svg{
+    width: 100% !important;
+    border: 4px solid #254225;
+    border-radius: 5px;
+}

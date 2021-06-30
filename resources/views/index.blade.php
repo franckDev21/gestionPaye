@@ -12,6 +12,8 @@
     <!--begin::Page Vendors Styles(used by this page)-->
     <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Page Vendors Styles-->
+    <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dash.css') }}">
 @endsection
 
 @section('col')
@@ -225,8 +227,7 @@
                             <!--begin::Row-->
                             <div class="row m-0">
                                 <div class="col bg-light-warning px-6 py-8 rounded-xl mr-7 mb-7">
-                                    <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2"
-                                        style="text-align:center;">
+                                    <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
                                         <!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg-->
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 495 495"
@@ -259,13 +260,12 @@
                                         <!--end::Svg Icon-->
                                     </span>
                                     <a href="/caisse" class="text-warning font-weight-bold font-size-h6 mr-4">Montant
-                                        Caisse</a>
+                                        Caisse</a> <br>
                                     <span class="text-dark-75 font-weight-bolder font-size-h3">{{ $caisse }}
                                         FCFA</span>
                                 </div>
                                 <div class="col bg-light-primary px-6 py-8 rounded-xl mb-7">
-                                    <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2"
-                                        style="text-align:center;">
+                                    <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
                                         <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                             width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -282,8 +282,8 @@
                                         <!--end::Svg Icon-->
 
                                     </span>
-                                    <a href="/employes" class="text-primary font-weight-bold font-size-h6 mt-2 mr-8">Total
-                                        Employés</a>
+                                    <a href="/employes" style="color:var(--primary) !important;background-color:transparent !important" class="text-primary font-weight-bold font-size-h6 mt-2 mr-8">Total
+                                        Employés</a> <br>
                                     <span
                                         class="text-dark-75 font-weight-bolder font-size-h3 text-right">{{ $employe }}</span>
                                 </div>
@@ -291,7 +291,7 @@
                             <!--end::Row-->
                             <!--begin::Row-->
                             <div class="row m-0">
-                                <div class="col bg-light-danger px-6 py-8 rounded-xl mr-7">
+                                <div class="col px-6 py-8 rounded-xl mr-7" style="background-color:#fbbec5">
                                     <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
                                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="30pt" viewBox="0 0 30 30" version="1.1">
@@ -303,7 +303,7 @@
                                     </span>
                                     <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">
                                         Transactions sortantes <br/>
-                                        <span class="display-block h2" style="color:#606060">12</span>
+                                        <span class="display-block h2" style="color:#fff">12</span>
                                     </a>
                                 </div>
                                 <div class="col theme px-6 py-8 rounded-xl">
@@ -407,6 +407,184 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-4">
+                        <div class="d-flex align-items-center mb-4" style="background-color: rgba(204, 204, 204, 0.096)">
+                            <!--begin::Bullet-->
+                            <span class="bullet bullet-bar align-self-stretch" style="background-color:#109c10;"></span>
+                            <!--end::Bullet-->
+                            <!--begin::Checkbox-->
+                            <span class="mx-3 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="20pt" height="20pt"
+                                    viewBox="0 0 30 30" version="1.1">
+                                    <g id="surface1">
+                                        <path
+                                            style=" stroke:none;fill-rule:nonzero;fill:#109c10;fill-opacity:1;"
+                                            d="M 24.671875 3.949219 C 24.648438 3.949219 22.265625 3.96875 19.84375 5.839844 C 16.714844 8.257813 14.984375 12.710938 14.816406 18.75 L 18.75 18.75 C 19.148438 18.75 19.507813 18.988281 19.664063 19.359375 C 19.8125 19.730469 19.730469 20.152344 19.449219 20.433594 L 12.539063 27.34375 C 12.15625 27.726563 11.53125 27.726563 11.144531 27.34375 L 4.238281 20.433594 C 3.957031 20.152344 3.871094 19.730469 4.019531 19.359375 C 4.175781 18.988281 4.539063 18.75 4.933594 18.75 L 8.898438 18.75 C 9.429688 2.453125 23.085938 1.972656 24.671875 1.972656 C 25.21875 1.972656 25.65625 2.417969 25.65625 2.960938 C 25.65625 3.503906 25.21875 3.949219 24.671875 3.949219 Z " />
+                                    </g>
+                                </svg>
+                            </span>
+                            <!--end::Checkbox-->
+                            <!--begin::Text-->
+                            <div class="d-flex flex-column flex-grow-1">
+                                <a href="#"
+                                    class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Franck Tiomela</a>
+                                <span style="color:#109c10">12 000 FCFA</span>
+                                <span class="text-muted font-weight-bold">le 12 Septembre 2000</span>
+                            </div>
+                            <!--end::Text-->
+                            <!--begin::Dropdown-->
+                            <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
+                                data-placement="left">
+                                <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="ki ki-bold-more-hor"></i>
+                                </a>
+                                <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
+                                    <!--begin::Navigation-->
+                                    <ul class="navi navi-hover">
+                                        <li class="navi-header font-weight-bold py-4">
+                                            <span class="font-size-lg">Choose Label:</span>
+                                            <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip"
+                                                data-placement="right" title="Click to learn more..."></i>
+                                        </li>
+                                        <li class="navi-separator mb-3 opacity-70"></li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-success">Customer</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-danger">Partner</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-warning">Suplier</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-primary">Member</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span class="label label-xl label-inline label-light-dark">Staff</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-separator mt-3 opacity-70"></li>
+                                        <li class="navi-footer py-4">
+                                            <a class="btn btn-clean font-weight-bold btn-sm" href="#">
+                                                <i class="ki ki-plus icon-sm"></i>Add new</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Navigation-->
+                                </div>
+                            </div>
+                            <!--end::Dropdown-->
+                        </div>
+                        <div class="d-flex align-items-center mb-4" style="background-color: rgba(204, 204, 204, 0.096)">
+                            <!--begin::Bullet-->
+                            <span class="bullet bullet-bar align-self-stretch" style="background-color:#F64E60;"></span>
+                            <!--end::Bullet-->
+                            <!--begin::Checkbox-->
+                            <span class="mx-3 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20pt" height="20pt" viewBox="0 0 30 30" version="1.1">
+                                    <g id="surface1">
+                                        <path style=" stroke:none;fill-rule:nonzero;fill:#F64E60;fill-opacity:1;" d="M 4.933594 25.65625 C 4.957031 25.65625 7.339844 25.636719 9.757813 23.765625 C 12.890625 21.347656 14.621094 16.894531 14.789063 10.855469 L 10.855469 10.855469 C 10.457031 10.855469 10.097656 10.617188 9.941406 10.246094 C 9.792969 9.875 9.875 9.453125 10.15625 9.171875 L 17.066406 2.261719 C 17.449219 1.878906 18.074219 1.878906 18.460938 2.261719 L 25.367188 9.171875 C 25.648438 9.453125 25.734375 9.875 25.585938 10.246094 C 25.429688 10.617188 25.066406 10.855469 24.671875 10.855469 L 20.707031 10.855469 C 20.175781 27.152344 6.519531 27.632813 4.933594 27.632813 C 4.386719 27.632813 3.949219 27.1875 3.949219 26.644531 C 3.949219 26.101563 4.386719 25.65625 4.933594 25.65625 Z "/>
+                                    </g>
+                                </svg>
+                            </span>
+                            <!--end::Checkbox-->
+                            <!--begin::Text-->
+                            <div class="d-flex flex-column flex-grow-1">
+                                <a href="#"
+                                    class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Franck Tiomela</a>
+                                <span style="color:#F64E60">12 000 FCFA</span>
+                                <span class="text-muted font-weight-bold">le 24 Janvier 1999</span>
+                            </div>
+                            <!--end::Text-->
+                            <!--begin::Dropdown-->
+                            <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
+                                data-placement="left">
+                                <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="ki ki-bold-more-hor"></i>
+                                </a>
+                                <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
+                                    <!--begin::Navigation-->
+                                    <ul class="navi navi-hover">
+                                        <li class="navi-header font-weight-bold py-4">
+                                            <span class="font-size-lg">Choose Label:</span>
+                                            <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip"
+                                                data-placement="right" title="Click to learn more..."></i>
+                                        </li>
+                                        <li class="navi-separator mb-3 opacity-70"></li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-success">Customer</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-danger">Partner</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-warning">Suplier</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span
+                                                        class="label label-xl label-inline label-light-primary">Member</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link">
+                                                <span class="navi-text">
+                                                    <span class="label label-xl label-inline label-light-dark">Staff</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-separator mt-3 opacity-70"></li>
+                                        <li class="navi-footer py-4">
+                                            <a class="btn btn-clean font-weight-bold btn-sm" href="#">
+                                                <i class="ki ki-plus icon-sm"></i>Add new</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Navigation-->
+                                </div>
+                            </div>
+                            <!--end::Dropdown-->
+                        </div>
                     </div>
                     <!--end: Card Body-->
                 </div>
@@ -414,71 +592,44 @@
             </div>
             <div class="col-lg-6 col-xxl-4">
                 <!--begin::Stats Widget 11-->
-                <div class="card card-custom card-stretch card-stretch-half gutter-b">
+                <div class="card p-4 card-custom card-stretch card-stretch-half gutter-b text-center">
                     <!--begin::Body-->
                     <div class="card-body p-0">
-                        <div class="d-flex align-items-center justify-content-between card-spacer flex-grow-1">
-                            <span class="symbol symbol-50 symbol-light-success mr-2">
-                                <span class="symbol-label">
-                                    <span class="svg-icon svg-icon-xl svg-icon-success">
-                                        <!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <rect fill="#000000" x="4" y="4" width="7" height="7" rx="1.5" />
-                                                <path
-                                                    d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
-                                                    fill="#000000" opacity="0.3" />
-                                            </g>
-                                        </svg>
-                                        <!--end::Svg Icon-->
-                                    </span>
-                                </span>
-                            </span>
-                            <div class="d-flex flex-column text-right">
-                                <span class="text-dark-75 font-weight-bolder font-size-h3">{{ $employe }}</span>
-                                <span class="text-muted font-weight-bold mt-2">Montant en Caisse</span>
-                            </div>
+                        <div class="card__montant">
+                            <span class="card__prime">Montant en caisse</span>
+                            10 000 FCFA
                         </div>
-                        <div id="kt_stats_widget_11_chart" class="card-rounded-bottom" data-color="success"
-                            style="height: 150px"></div>
+                        <a href="#" class="card_btn text-cemter" style="display:inline-block;font-size:20px;border-radius:7px;padding:10px 40px; margin:25px auto; background-color:#3e8c3e; color:#fff">Voir la caisse</a>
                     </div>
                     <!--end::Body-->
                 </div>
                 <!--end::Stats Widget 11-->
                 <!--begin::Stats Widget 12-->
-                <div class="card card-custom card-stretch card-stretch-half gutter-b">
+                <div class="p-4 total_ card card-custom card-stretch card-stretch-half gutter-b">
                     <!--begin::Body-->
-                    <div class="card-body p-0">
-                        <div class="d-flex align-items-center justify-content-between card-spacer flex-grow-1">
-                            <span class="symbol symbol-50 symbol-light-primary mr-2">
-                                <span class="symbol-label">
-                                    <span class="svg-icon svg-icon-xl svg-icon-primary">
-                                        <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group.svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon points="0 0 24 0 24 24 0 24" />
-                                                <path
-                                                    d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
-                                                    fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                <path
-                                                    d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
-                                                    fill="#000000" fill-rule="nonzero" />
-                                            </g>
-                                        </svg>
-                                        <!--end::Svg Icon-->
-                                    </span>
-                                </span>
-                            </span>
-                            <div class="d-flex flex-column text-right">
-                                <span class="text-dark-75 font-weight-bolder font-size-h3">+6,5K</span>
-                                <span class="text-muted font-weight-bold mt-2">Total Employés</span>
-                            </div>
-                        </div>
-                        <div id="kt_stats_widget_12_chart" class="card-rounded-bottom" data-color="primary"
-                            style="height: 150px"></div>
+                    <div class="svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32pt" height="32pt" viewBox="0 0 32 32" version="1.1">
+                            <g id="surface1">
+                                <path style=" stroke:none;fill-rule:nonzero;fill:#254225;fill-opacity:1;" d="M 16 5 C 12.144531 5 9 8.144531 9 12 C 9 14.40625 10.230469 16.539063 12.089844 17.796875 C 8.515625 19.324219 6 22.875 6 27 L 8 27 C 8 23.472656 10.269531 20.496094 13.425781 19.425781 L 15.75 21.75 L 14 27 L 16 29 L 18 27 L 16.25 21.75 L 18.574219 19.425781 C 21.730469 20.496094 24 23.472656 24 27 L 26 27 C 26 22.875 23.484375 19.324219 19.910156 17.796875 C 21.769531 16.539063 23 14.40625 23 12 C 23 8.144531 19.855469 5 16 5 Z M 16 7 C 18.773438 7 21 9.226563 21 12 C 21 14.773438 18.773438 17 16 17 C 13.226563 17 11 14.773438 11 12 C 11 9.226563 13.226563 7 16 7 Z M 24 8.070313 L 24 10.105469 C 25.804688 10.453125 27 11.746094 27 13.5 C 27 15.253906 25.804688 16.546875 24 16.894531 L 24 19.09375 C 26.796875 19.585938 29 22.089844 29 25 L 31 25 C 31 21.980469 29.21875 19.289063 26.675781 17.933594 C 28.113281 16.957031 29 15.382813 29 13.5 C 29 10.628906 26.949219 8.472656 24 8.070313 Z M 8 8.078125 C 5.089844 8.488281 3 10.679688 3 13.5 C 3 15.382813 3.886719 16.957031 5.324219 17.933594 C 2.78125 19.289063 1 21.980469 1 25 L 3 25 C 3 22.089844 5.203125 19.585938 8 19.09375 L 8 16.894531 C 6.195313 16.546875 5 15.253906 5 13.5 C 5 11.777344 6.21875 10.46875 8 10.109375 Z "/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="total">
+                        <h4>Total Utilisateurs</h4>
+                        <span>20 Utilisateurs</span>
+                        <a href="#" class="theme-dark">voir la liste</a>
+                    </div>
+                    <div class="svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26pt" height="26pt" viewBox="0 0 26 26" version="1.1">
+                            <g id="surface1">
+                                <path style=" stroke:none;fill-rule:nonzero;fill:#254225;fill-opacity:1;" d="M 16.375 0.03125 C 16.105469 0.03125 15.851563 0.285156 15.851563 0.585938 L 15.851563 4.246094 C 15.851563 4.246094 15.226563 0.738281 14.925781 0.832031 C 13.941406 1.132813 13.121094 1.710938 12.558594 2.460938 C 14.222656 3.382813 15.398438 4.933594 15.757813 6.738281 C 15.816406 6.777344 15.859375 6.847656 15.910156 6.894531 L 22.960938 6.894531 C 22.960938 4.757813 21.789063 5.46875 21.789063 4.984375 C 21.789063 3.089844 20.480469 1.414063 18.558594 0.832031 C 18.257813 0.738281 17.636719 4.246094 17.636719 4.246094 L 17.636719 0.585938 C 17.636719 0.285156 17.386719 0.03125 17.113281 0.03125 Z M 8.496094 2.984375 C 8.226563 2.984375 7.972656 3.238281 7.972656 3.539063 L 7.972656 7.203125 C 7.972656 7.203125 7.347656 3.691406 7.046875 3.785156 C 5.128906 4.371094 3.816406 6.046875 3.816406 7.941406 C 3.816406 8.425781 2.648438 7.734375 2.648438 9.847656 L 15.082031 9.847656 C 15.082031 7.714844 13.910156 8.425781 13.910156 7.941406 C 13.910156 6.042969 12.601563 4.371094 10.679688 3.785156 C 10.378906 3.691406 9.757813 7.203125 9.757813 7.203125 L 9.757813 3.539063 C 9.757813 3.238281 9.507813 2.984375 9.234375 2.984375 Z M 16.710938 7.941406 C 16.929688 8.460938 17.050781 9.113281 17.050781 9.847656 C 17.050781 10.878906 16.246094 11.703125 15.234375 11.789063 C 15.078125 13.894531 14.34375 15.105469 13.511719 16.066406 C 15.957031 17.03125 19.605469 18.957031 19.605469 21.945313 L 19.605469 22.4375 C 22.796875 22.199219 25.515625 21.460938 25.515625 19.636719 L 25.515625 18.988281 C 25.515625 17.207031 22.394531 15.480469 19.605469 14.558594 C 19.476563 14.515625 18.667969 14.144531 19.171875 12.617188 L 19.144531 12.617188 C 20.328125 11.398438 21.175781 10.570313 21.175781 7.941406 Z M 4.460938 10.894531 C 4.460938 13.554688 5.269531 14.355469 6.464844 15.574219 C 6.980469 16.917969 6.070313 17.441406 5.878906 17.511719 C 3.21875 18.472656 0.09375 20.210938 0.09375 21.945313 L 0.09375 22.589844 C 0.09375 24.949219 4.664063 25.484375 8.894531 25.484375 C 13.132813 25.484375 17.636719 24.949219 17.636719 22.589844 L 17.636719 21.945313 C 17.636719 20.164063 14.515625 18.433594 11.726563 17.511719 C 11.597656 17.46875 10.789063 17.101563 11.296875 15.574219 L 11.265625 15.574219 C 12.449219 14.351563 13.296875 13.527344 13.296875 10.894531 Z "/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="total">
+                        <h4>Total Employés</h4>
+                        <span>100 Employés</span>
+                        <a href="#" class="theme-dark">voir la liste</a>
                     </div>
                     <!--end::Body-->
                 </div>
@@ -2303,7 +2454,7 @@
                 <div class="card card-custom card-stretch gutter-b">
                     <!--begin::Header-->
                     <div class="card-header border-0">
-                        <h3 class="card-title font-weight-bolder text-dark">Authors</h3>
+                        <h3 class="card-title font-weight-bolder text-dark">Liste des utilisateurs</h3>
                         <div class="card-toolbar">
                             <div class="dropdown dropdown-inline">
                                 <a href="#" class="btn btn-light-primary btn-sm font-weight-bolder dropdown-toggle"
@@ -2784,517 +2935,34 @@
                 <div class="card card-custom card-stretch gutter-b">
                     <!--begin::Header-->
                     <div class="card-header border-0">
-                        <h3 class="card-title font-weight-bolder text-dark">Todo</h3>
+                        <h3 class="card-title font-weight-bolder text-dark">Transactions Entrantes</h3>
                         <div class="card-toolbar">
-                            <div class="dropdown dropdown-inline">
-                                <a href="#"
-                                    class="btn btn-light btn-sm font-size-sm font-weight-bolder dropdown-toggle text-dark-75"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</a>
-                                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                    <!--begin::Navigation-->
-                                    <ul class="navi navi-hover">
-                                        <li class="navi-header pb-1">
-                                            <span class="text-primary text-uppercase font-weight-bold font-size-sm">Add
-                                                new:</span>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-shopping-cart-1"></i>
-                                                </span>
-                                                <span class="navi-text">Order</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-calendar-8"></i>
-                                                </span>
-                                                <span class="navi-text">Event</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-graph-1"></i>
-                                                </span>
-                                                <span class="navi-text">Report</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-rocket-1"></i>
-                                                </span>
-                                                <span class="navi-text">Post</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-writing"></i>
-                                                </span>
-                                                <span class="navi-text">File</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Navigation-->
-                                </div>
-                            </div>
+                            <a href="#" class="btn btn-theme">voir tout</a>
                         </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-2">
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-center">
-                            <!--begin::Bullet-->
-                            <span class="bullet bullet-bar bg-success align-self-stretch"></span>
-                            <!--end::Bullet-->
-                            <!--begin::Checkbox-->
-                            <label
-                                class="checkbox checkbox-lg checkbox-light-success checkbox-inline flex-shrink-0 m-0 mx-4">
-                                <input type="checkbox" name="select" value="1" />
-                                <span></span>
-                            </label>
-                            <!--end::Checkbox-->
-                            <!--begin::Text-->
-                            <div class="d-flex flex-column flex-grow-1">
-                                <a href="#"
-                                    class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Create
-                                    FireStone Logo</a>
-                                <span class="text-muted font-weight-bold">Due in 2 Days</span>
-                            </div>
-                            <!--end::Text-->
-                            <!--begin::Dropdown-->
-                            <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
-                                data-placement="left">
-                                <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-hor"></i>
-                                </a>
-                                <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-                                    <!--begin::Navigation-->
-                                    <ul class="navi navi-hover">
-                                        <li class="navi-header font-weight-bold py-4">
-                                            <span class="font-size-lg">Choose Label:</span>
-                                            <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip"
-                                                data-placement="right" title="Click to learn more..."></i>
-                                        </li>
-                                        <li class="navi-separator mb-3 opacity-70"></li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-success">Customer</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-danger">Partner</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-primary">Member</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-separator mt-3 opacity-70"></li>
-                                        <li class="navi-footer py-4">
-                                            <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Navigation-->
+                        <div class="card__transaction">
+                            <div class="card__date"> 22 juin 2020<em style="font-size: 14px;font-weight:lighter">( de la caisse 10 000 FCFA)</em></div>
+                            <div class="card__recu">
+                                <div class="card__prix"><strong>Jean pierre</strong> - montant total recu 200 FCFA</div>
+                                <div class="card__list-recu">
+                                    <div class="card__items-recu">
+                                        <strong>Prime A</strong>
+                                        <span>20 F</span>
+                                    </div>
+                                    <div class="card__items-recu">
+                                        <strong>Prime B</strong>
+                                        <span>20 F</span>
+                                    </div>
+                                    <div class="card__items-recu">
+                                        <strong>Prime C</strong>
+                                        <span>20 F</span>
+                                    </div>
                                 </div>
                             </div>
-                            <!--end::Dropdown-->
                         </div>
-                        <!--end:Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-center mt-10">
-                            <!--begin::Bullet-->
-                            <span class="bullet bullet-bar bg-primary align-self-stretch"></span>
-                            <!--end::Bullet-->
-                            <!--begin::Checkbox-->
-                            <label
-                                class="checkbox checkbox-lg checkbox-light-primary checkbox-inline flex-shrink-0 m-0 mx-4">
-                                <input type="checkbox" value="1" />
-                                <span></span>
-                            </label>
-                            <!--end::Checkbox-->
-                            <!--begin::Text-->
-                            <div class="d-flex flex-column flex-grow-1">
-                                <a href="#"
-                                    class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Stakeholder
-                                    Meeting</a>
-                                <span class="text-muted font-weight-bold">Due in 3 Days</span>
-                            </div>
-                            <!--end::Text-->
-                            <!--begin::Dropdown-->
-                            <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
-                                data-placement="left">
-                                <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-hor"></i>
-                                </a>
-                                <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-                                    <!--begin::Navigation-->
-                                    <ul class="navi navi-hover">
-                                        <li class="navi-header font-weight-bold py-4">
-                                            <span class="font-size-lg">Choose Label:</span>
-                                            <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip"
-                                                data-placement="right" title="Click to learn more..."></i>
-                                        </li>
-                                        <li class="navi-separator mb-3 opacity-70"></li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-success">Customer</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-danger">Partner</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-primary">Member</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-separator mt-3 opacity-70"></li>
-                                        <li class="navi-footer py-4">
-                                            <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Navigation-->
-                                </div>
-                            </div>
-                            <!--end::Dropdown-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-center mt-10">
-                            <!--begin::Bullet-->
-                            <span class="bullet bullet-bar bg-warning align-self-stretch"></span>
-                            <!--end::Bullet-->
-                            <!--begin::Checkbox-->
-                            <label
-                                class="checkbox checkbox-lg checkbox-light-warning checkbox-inline flex-shrink-0 m-0 mx-4">
-                                <input type="checkbox" value="1" />
-                                <span></span>
-                            </label>
-                            <!--end::Checkbox-->
-                            <!--begin::Text-->
-                            <div class="d-flex flex-column flex-grow-1">
-                                <a href="#"
-                                    class="text-dark-75 text-hover-primary font-size-sm font-weight-bold font-size-lg mb-1">Scoping
-                                    &amp; Estimations</a>
-                                <span class="text-muted font-weight-bold">Due in 5 Days</span>
-                            </div>
-                            <!--end::Text-->
-                            <!--begin: Dropdown-->
-                            <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
-                                data-placement="left">
-                                <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-hor"></i>
-                                </a>
-                                <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-                                    <!--begin::Navigation-->
-                                    <ul class="navi navi-hover">
-                                        <li class="navi-header font-weight-bold py-4">
-                                            <span class="font-size-lg">Choose Label:</span>
-                                            <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip"
-                                                data-placement="right" title="Click to learn more..."></i>
-                                        </li>
-                                        <li class="navi-separator mb-3 opacity-70"></li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-success">Customer</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-danger">Partner</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-primary">Member</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-separator mt-3 opacity-70"></li>
-                                        <li class="navi-footer py-4">
-                                            <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Navigation-->
-                                </div>
-                            </div>
-                            <!--end::Dropdown-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-center mt-10">
-                            <!--begin::Bullet-->
-                            <span class="bullet bullet-bar bg-info align-self-stretch"></span>
-                            <!--end::Bullet-->
-                            <!--begin::Checkbox-->
-                            <label class="checkbox checkbox-lg checkbox-light-info checkbox-inline flex-shrink-0 m-0 mx-4">
-                                <input type="checkbox" value="1" />
-                                <span></span>
-                            </label>
-                            <!--end::Checkbox-->
-                            <!--begin::Text-->
-                            <div class="d-flex flex-column flex-grow-1">
-                                <a href="#"
-                                    class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Sprint
-                                    Showcase</a>
-                                <span class="text-muted font-weight-bold">Due in 1 Day</span>
-                            </div>
-                            <!--end::Text-->
-                            <!--begin::Dropdown-->
-                            <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
-                                data-placement="left">
-                                <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-hor"></i>
-                                </a>
-                                <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-                                    <!--begin::Navigation-->
-                                    <ul class="navi navi-hover py-5">
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-drop"></i>
-                                                </span>
-                                                <span class="navi-text">New Group</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-list-3"></i>
-                                                </span>
-                                                <span class="navi-text">Contacts</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-rocket-1"></i>
-                                                </span>
-                                                <span class="navi-text">Groups</span>
-                                                <span class="navi-link-badge">
-                                                    <span
-                                                        class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-bell-2"></i>
-                                                </span>
-                                                <span class="navi-text">Calls</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-gear"></i>
-                                                </span>
-                                                <span class="navi-text">Settings</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-separator my-3"></li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-magnifier-tool"></i>
-                                                </span>
-                                                <span class="navi-text">Help</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-bell-2"></i>
-                                                </span>
-                                                <span class="navi-text">Privacy</span>
-                                                <span class="navi-link-badge">
-                                                    <span
-                                                        class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Navigation-->
-                                </div>
-                            </div>
-                            <!--end::Dropdown-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-center mt-10">
-                            <!--begin::Bullet-->
-                            <span class="bullet bullet-bar bg-danger align-self-stretch"></span>
-                            <!--end::Bullet-->
-                            <!--begin::Checkbox-->
-                            <label
-                                class="checkbox checkbox-lg checkbox-light-danger checkbox-inline flex-shrink-0 m-0 mx-4">
-                                <input type="checkbox" value="1" />
-                                <span></span>
-                            </label>
-                            <!--end::Checkbox:-->
-                            <!--begin::Title-->
-                            <div class="d-flex flex-column flex-grow-1">
-                                <a href="#"
-                                    class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Project
-                                    Retro</a>
-                                <span class="text-muted font-weight-bold">Due in 12 Days</span>
-                            </div>
-                            <!--end::Text-->
-                            <!--begin: Dropdown-->
-                            <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
-                                data-placement="left">
-                                <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-hor"></i>
-                                </a>
-                                <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-                                    <!--begin::Navigation-->
-                                    <ul class="navi navi-hover">
-                                        <li class="navi-header font-weight-bold py-4">
-                                            <span class="font-size-lg">Choose Label:</span>
-                                            <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip"
-                                                data-placement="right" title="Click to learn more..."></i>
-                                        </li>
-                                        <li class="navi-separator mb-3 opacity-70"></li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-success">Customer</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-danger">Partner</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span
-                                                        class="label label-xl label-inline label-light-primary">Member</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-text">
-                                                    <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-separator mt-3 opacity-70"></li>
-                                        <li class="navi-footer py-4">
-                                            <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Navigation-->
-                                </div>
-                            </div>
-                            <!--end::Dropdown-->
-                        </div>
-                        <!--end::Item-->
                     </div>
                     <!--end::Body-->
                 </div>
@@ -3305,153 +2973,20 @@
                 <div class="card card-custom card-stretch gutter-b">
                     <!--begin::Header-->
                     <div class="card-header border-0">
-                        <h3 class="card-title font-weight-bolder text-dark">Trends</h3>
+                        <h3 class="card-title font-weight-bolder text-dark">Transactions Sortantes</h3>
                         <div class="card-toolbar">
-                            <div class="dropdown dropdown-inline">
-                                <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-ver"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                    <!--begin::Navigation-->
-                                    <ul class="navi navi-hover">
-                                        <li class="navi-header pb-1">
-                                            <span class="text-primary text-uppercase font-weight-bold font-size-sm">Add
-                                                new:</span>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-shopping-cart-1"></i>
-                                                </span>
-                                                <span class="navi-text">Order</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-calendar-8"></i>
-                                                </span>
-                                                <span class="navi-text">Event</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-graph-1"></i>
-                                                </span>
-                                                <span class="navi-text">Report</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-rocket-1"></i>
-                                                </span>
-                                                <span class="navi-text">Post</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-writing"></i>
-                                                </span>
-                                                <span class="navi-text">File</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Navigation-->
-                                </div>
-                            </div>
+                            <a href="#" class="btn btn-danger">voir tout</a>
                         </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
-                    <div class="card-body pt-0">
-                        <!--begin::Item-->
-                        <div class="mb-10">
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Symbol-->
-                                <div class="symbol symbol-45 symbol-light mr-5">
-                                    <span class="symbol-label">
-                                        <img src="assets/media/svg/misc/006-plurk.svg" class="h-50 align-self-center"
-                                            alt="" />
-                                    </span>
-                                </div>
-                                <!--end::Symbol-->
-                                <!--begin::Text-->
-                                <div class="d-flex flex-column flex-grow-1">
-                                    <a href="#"
-                                        class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Top
-                                        Authors</a>
-                                    <span class="text-muted font-weight-bold">5 day ago</span>
-                                </div>
-                                <!--end::Text-->
+                    <div class="card-body pt-2">
+                        <div class="card__transaction out">
+                            <div class="card__date"><strong>Jason Derulo</strong> ~  12 septembre 2020</div>
+                            <div class="card__recu">
+                                <div class="card__prix">montant total rétirer 200 FCFA</div>
                             </div>
-                            <!--end::Section-->
-                            <!--begin::Desc-->
-                            <p class="text-dark-50 m-0 pt-5 font-weight-normal">A brief write up about the top Authors that
-                                fits within this section</p>
-                            <!--end::Desc-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="mb-10">
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Symbol-->
-                                <div class="symbol symbol-45 symbol-light mr-5">
-                                    <span class="symbol-label">
-                                        <img src="assets/media/svg/misc/015-telegram.svg" class="h-50 align-self-center"
-                                            alt="" />
-                                    </span>
-                                </div>
-                                <!--end::Symbol-->
-                                <!--begin::Text-->
-                                <div class="d-flex flex-column flex-grow-1">
-                                    <a href="#"
-                                        class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Popular
-                                        Authors</a>
-                                    <span class="text-muted font-weight-bold">5 day ago</span>
-                                </div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Section-->
-                            <!--begin::Desc-->
-                            <p class="text-dark-50 m-0 pt-5 font-weight-normal">A brief write up about the Popular Authors
-                                that fits within this section</p>
-                            <!--end::Desc-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="">
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Symbol-->
-                                <div class="symbol symbol-45 symbol-light mr-5">
-                                    <span class="symbol-label">
-                                        <img src="assets/media/svg/misc/014-kickstarter.svg" class="h-50 align-self-center"
-                                            alt="" />
-                                    </span>
-                                </div>
-                                <!--end::Symbol-->
-                                <!--begin::Text-->
-                                <div class="d-flex flex-column flex-grow-1">
-                                    <a href="#"
-                                        class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">New
-                                        Users</a>
-                                    <span class="text-muted font-weight-bold">5 day ago</span>
-                                </div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Section-->
-                            <!--begin::Desc-->
-                            <p class="text-dark-50 m-0 pt-5 font-weight-normal">A brief write up about the New Users that
-                                fits within this section</p>
-                            <!--end::Desc-->
-                        </div>
-                        <!--end::Item-->
                     </div>
                     <!--end::Body-->
                 </div>
@@ -3467,7 +3002,7 @@
                 <div class="card card-custom card-stretch gutter-b">
                     <!--begin::Header-->
                     <div class="card-header border-0 pt-5">
-                        <h3 class="card-title font-weight-bolder">Action Needed</h3>
+                        <h3 class="card-title font-weight-bolder">Profil</h3>
                         <div class="card-toolbar">
                             <div class="dropdown dropdown-inline">
                                 <a href="#" class="btn btn-clean btn-sm btn-icon" data-toggle="dropdown"
@@ -3552,15 +3087,17 @@
                     <!--begin::Body-->
                     <div class="card-body d-flex flex-column">
                         <div class="flex-grow-1">
-                            <div id="kt_mixed_widget_14_chart" style="height: 200px"></div>
+                            <div id="kt_mixed_widget_14_chart p-3" style="height: 200px">
+                                <img src="{{ asset('uploads/employes/user_100.png') }}"
+                                class="card__img" alt="" />
+                            </div>
                         </div>
                         <div class="pt-5">
                             <p class="text-center font-weight-normal font-size-lg pb-7">Notes: Current sprint requires
                                 stakeholders
                                 <br />to approve newly amended policies
                             </p>
-                            <a href="#" class="btn btn-success btn-shadow-hover font-weight-bolder w-100 py-3">Generate
-                                Report</a>
+                            <a href="#" class="btn btn-theme btn-shadow-hover font-weight-bolder w-100 py-3">Voir le profil de l'employé</a>
                         </div>
                     </div>
                     <!--end::Body-->
@@ -3573,12 +3110,12 @@
                     <!--begin::Header-->
                     <div class="card-header border-0 py-5">
                         <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label font-weight-bolder text-dark">Agents Stats</span>
-                            <span class="text-muted mt-3 font-weight-bold font-size-sm">More than 400+ new members</span>
+                            <span class="card-label font-weight-bolder text-dark">Liste des Employés</span>
+                            <span class="text-muted mt-3 font-weight-bold font-size-sm">400 Employés</span>
                         </h3>
                         <div class="card-toolbar">
-                            <a href="#" class="btn btn-info font-weight-bolder font-size-sm mr-3">New Report</a>
-                            <a href="#" class="btn btn-danger font-weight-bolder font-size-sm">Create</a>
+                            <a href="#" class="btn btn-theme font-weight-bolder font-size-sm mr-3">voir tous les emplyés</a>
+                            <a href="#" class="btn font-weight-bolder font-size-sm" style="background-color: #254225;color:#fff">Create nouveau employé</a>
                         </div>
                     </div>
                     <!--end::Header-->
@@ -3593,10 +3130,8 @@
                                             <th style="min-width: 250px" class="pl-7">
                                                 <span class="text-dark-75">products</span>
                                             </th>
-                                            <th style="min-width: 100px">earnings</th>
-                                            <th style="min-width: 100px">comission</th>
-                                            <th style="min-width: 100px">company</th>
-                                            <th style="min-width: 130px">rating</th>
+                                            <th style="min-width: 100px">Total prime</th>
+                                            <th style="min-width: 100px">Téléphone</th>
                                             <th style="min-width: 80px"></th>
                                         </tr>
                                     </thead>
@@ -3625,155 +3160,11 @@
                                                 <span class="text-muted font-weight-bold">In Proccess</span>
                                             </td>
                                             <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">$520</span>
-                                                <span class="text-muted font-weight-bold">Paid</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">Intertico</span>
-                                                <span class="text-muted font-weight-bold">Web, UI/UX Design</span>
-                                            </td>
-                                            <td>
-                                                <img src="assets/media/logos/stars.png" alt="image" style="width: 5.5rem" />
-                                                <span class="text-muted font-weight-bold d-block font-size-sm">Best
-                                                    Rated</span>
+                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">6 99 53 98 01</span>
                                             </td>
                                             <td class="pr-0 text-right">
                                                 <a href="#"
-                                                    class="btn btn-light-success font-weight-bolder font-size-sm">View
-                                                    Offer</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pl-0 py-0">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="symbol symbol-50 symbol-light mr-4">
-                                                        <span class="symbol-label">
-                                                            <img src="assets/media/svg/avatars/018-girl-9.svg"
-                                                                class="h-75 align-self-end" alt="" />
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <a href="#"
-                                                            class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Jessie
-                                                            Clarcson</a>
-                                                        <span class="text-muted font-weight-bold d-block">C#, ASP.NET, MS
-                                                            SQL</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">$23,000,000</span>
-                                                <span class="text-muted font-weight-bold">Pending</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">$1,600</span>
-                                                <span class="text-muted font-weight-bold">Rejected</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">Agoda</span>
-                                                <span class="text-muted font-weight-bold">Houses &amp; Hotels</span>
-                                            </td>
-                                            <td>
-                                                <img src="assets/media/logos/stars.png" alt="image" style="width: 5.5rem" />
-                                                <span class="text-muted font-weight-bold d-block font-size-sm">Above
-                                                    Avarage</span>
-                                            </td>
-                                            <td class="pr-0 text-right">
-                                                <a href="#"
-                                                    class="btn btn-light-success font-weight-bolder font-size-sm">View
-                                                    Offer</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pl-0 py-8">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="symbol symbol-50 symbol-light mr-4">
-                                                        <span class="symbol-label">
-                                                            <img src="assets/media/svg/avatars/047-girl-25.svg"
-                                                                class="h-75 align-self-end" alt="" />
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <a href="#"
-                                                            class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Lebron
-                                                            Wayde</a>
-                                                        <span class="text-muted font-weight-bold d-block">PHP, Laravel,
-                                                            VueJS</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">$34,000,000</span>
-                                                <span class="text-muted font-weight-bold">Paid</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">$6,700</span>
-                                                <span class="text-muted font-weight-bold">Paid</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">RoadGee</span>
-                                                <span class="text-muted font-weight-bold">Paid</span>
-                                            </td>
-                                            <td>
-                                                <img src="assets/media/logos/stars.png" alt="image" style="width: 5.5rem" />
-                                                <span class="text-muted font-weight-bold d-block font-size-sm">Best
-                                                    Rated</span>
-                                            </td>
-                                            <td class="pr-0 text-right">
-                                                <a href="#"
-                                                    class="btn btn-light-success font-weight-bolder font-size-sm">View
-                                                    Offer</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pl-0 py-0">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="symbol symbol-50 symbol-light mr-4">
-                                                        <span class="symbol-label">
-                                                            <img src="assets/media/svg/avatars/014-girl-7.svg"
-                                                                class="h-75 align-self-end" alt="" />
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <a href="#"
-                                                            class="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg">Natali
-                                                            Trump</a>
-                                                        <span class="text-muted font-weight-bold d-block">Python,
-                                                            PostgreSQL, ReactJS</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="text-left pr-0">
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">$2,600,000</span>
-                                                <span class="text-muted font-weight-bold">Paid</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">$14,000</span>
-                                                <span class="text-muted font-weight-bold">Pending</span>
-                                            </td>
-                                            <td>
-                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">The
-                                                    Hill</span>
-                                                <span class="text-muted font-weight-bold">Insurance</span>
-                                            </td>
-                                            <td>
-                                                <img src="assets/media/logos/stars.png" style="width: 5.5rem" alt="" />
-                                                <span
-                                                    class="text-muted font-weight-bold d-block font-size-sm">Avarage</span>
-                                            </td>
-                                            <td class="pr-0 text-right">
-                                                <a href="#" class="btn btn-light-success font-weight-bolder font-size-sm"
-                                                    style="width: 7rem">View Offer</a>
+                                                    class="btn btn-light-success font-weight-bolder font-size-sm">voirle profil</a>
                                             </td>
                                         </tr>
                                     </tbody>
