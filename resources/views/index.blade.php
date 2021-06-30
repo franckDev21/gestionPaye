@@ -3164,7 +3164,7 @@
                                             </td>
                                             <td class="pr-0 text-right">
                                                 <a href="#"
-                                                    class="btn btn-light-success font-weight-bolder font-size-sm">voirle profil</a>
+                                                    class="btn  font-weight-bolder font-size-sm" style="background-color:#eeee232a; color:#eeee23">voirle profil</a>
                                             </td>
                                         </tr>
                                     </tbody>
