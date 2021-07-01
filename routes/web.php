@@ -34,6 +34,7 @@ Route::group(['middleware' =>['auth' , 'admin']] , function(){
     Route::get('/gerer_paie' , 'GestPaieController@index');
     Route::get('search' , 'GestPaieController@search');
     Route::post('search' , 'GestPaieController@search');
+    Route::post('searchAjax','GestPaieController@searchAjax');
     Route::get('/transaction', 'TransactionController@index');
     Route::post('/searchTransaction', 'TransactionController@search');
     Route::post('/payer-prime', 'TransactionController@payer');

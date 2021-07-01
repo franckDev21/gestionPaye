@@ -13,8 +13,24 @@ use Illuminate\Support\Facades\DB;
 class GestPaieController extends Controller
 {
     public function index(){
+        $token = request()->session()->token();
         $employe=Employe::all();
-        return view('gestpaie')->with('employe' , $employe);
+        return view('gestpaie',compact('employe','token'));
+    }
+
+    public function searchAjax(){
+        if(request('query')){
+            $matricule = request('query');
+            $employe = Employe::where('matricule' ,"$matricule")->get();
+            if(!empty($employe[0])){
+                echo json_encode($employe);
+            }else{
+                echo 'empty';
+            }
+        }else{
+            echo 'empty';
+        }
+        
     }
     
     public function search(Request $req){
