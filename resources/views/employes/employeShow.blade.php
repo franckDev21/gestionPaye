@@ -2,8 +2,12 @@
 
 @section('col')
     <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
-
+        <h3 class="pl-4">Profil | {{ $employe->noms_prenoms }}</h3>
     </div>
+@endsection
+
+@section('banner')
+    <img style="width: 100%; height: 100%;" src="{{ asset('images/banner.jpg') }}" alt="">
 @endsection
 
 @section('css')

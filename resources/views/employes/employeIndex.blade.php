@@ -1,5 +1,9 @@
 @extends('base')
 
+@section('banner')
+    <img style="width: 100%; height: 100%;" src="{{ asset('images/banner.jpg') }}" alt="">
+@endsection
+
 @section('title')
     Employés
 @endsection

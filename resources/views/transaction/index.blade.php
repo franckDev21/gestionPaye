@@ -1,5 +1,9 @@
 @extends('base')
 
+@section('banner')
+    <img style="width: 100%; height: 100%;" src="{{ asset('images/banner.jpg') }}" alt="">
+@endsection
+
 @section('col')
     <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
 		<h4 class="ml-3 p-2">Transactions</h4>
